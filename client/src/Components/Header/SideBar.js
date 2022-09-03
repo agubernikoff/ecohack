@@ -15,7 +15,7 @@ function SideBar() {
                     <Link to="/profile/:profile">Profile</Link>
                 </li>
                 <li className="py-3 font-bold">
-                    <Link to="/donate">Logout</Link>
+                    <button>Logout</button>
                 </li>
                 <li className="absolute bottom-10 right-0 left-0 m-auto w-min">
                     <GreenButton to="/donate" text="Donate" />

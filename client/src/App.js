@@ -5,7 +5,7 @@ import SignUp from './Pages/public/SignUp/SignUp.js'
 import Login from './Pages/public/Login.js'
 import Organization from './Pages/private/Organization'
 import Profile from './Pages/private/Profile.js'
-import Upload from './Pages/private/Upload.js'
+import Donate from './Pages/private/Donate.js'
 import TopHeader from './Components/Header/TopHeader'
 import SideBar from './Components/Header/SideBar'
 import Loading from './Components/Loading'
@@ -39,7 +39,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/:organization" element={restrict(<Organization />)} />
           <Route path="/profile/:user" element={restrict(<Profile />)}/>
-          <Route path="/sign-up" element={restrict(<Upload />)} />
+          <Route path="/donate" element={restrict(<Donate />)} />
         </Routes>
         </div>
       </div>
