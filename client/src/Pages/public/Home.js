@@ -1,7 +1,7 @@
 import React from 'react'
-import Background from '../Assets/home-background.jpg'
-import LoginButton from '../Components/Buttons/SolidWhiteButton'
-import SignUp from '../Components/Buttons/BorderWhiteButton'
+import Background from '../../Assets/home-background.jpg'
+import LoginButton from '../../Components/Buttons/SolidWhiteButton'
+import SignUp from '../../Components/Buttons/BorderWhiteButton'
 
 function Home() {
   return (

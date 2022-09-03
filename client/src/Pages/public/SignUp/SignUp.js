@@ -28,7 +28,6 @@ function displayLoginComponent() {
         ) : null}
         {displayLoginComponent()}
       </div>
-      
     </div>
   )
 }

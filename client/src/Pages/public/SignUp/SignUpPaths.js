@@ -1,6 +1,6 @@
 import React from 'react'
-import UserIcon from '../../Assets/user.js'
-import OrganizationIcon from '../../Assets/organization.js'
+import UserIcon from '../../../Assets/user.js'
+import OrganizationIcon from '../../../Assets/organization.js'
 
 
 function SignUpPaths({setSignupType}) {
