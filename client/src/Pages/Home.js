@@ -14,7 +14,7 @@ function Home() {
              <LoginButton to="/login" text="login"/> 
           </li>
           <li className="px-3">
-            <SignUp to="/login" text="Sign Up"/> 
+            <SignUp to="/sign-up" text="Sign Up"/> 
           </li>
         </ul>
       </section>
