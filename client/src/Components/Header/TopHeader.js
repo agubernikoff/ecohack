@@ -13,17 +13,16 @@ let isHome =  location.pathname === '/' ? true : false
         <nav className={isHome ? 'text-white' : 'text-black'}>
             <ul className="flex flex-row font-bold">
                 <ul className="px-2">
-                    <Link to="/">About</Link>
+                    <Link to="/about">About</Link>
                 </ul>
                 <ul className="px-2">
-                    <Link to="/">Sign Up</Link>
+                    <Link to="/sign-up">Sign Up</Link>
                 </ul>
                 <ul className="px-2">
-                    <Link to="/">Login</Link>
+                    <Link to="/login">Login</Link>
                 </ul>
             </ul>
         </nav>
-
     </div>
   )
 }
