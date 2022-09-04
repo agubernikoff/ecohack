@@ -15,6 +15,8 @@ function App() {
 
   const [user, setUser] = useState([])
 
+
+
   //if there is user data, use sidebar, else use top header
   const isLoggedIn = user.length !== 0
   const header = isLoggedIn ? <SideBar /> : <TopHeader />
@@ -35,7 +37,7 @@ function App() {
         <div style={isLoggedIn ? {marginLeft: "200px"} : {}} className="w-full">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setUser={setUser} user={user}/>} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/:organization" element={restrict(<Organization />)} />
           <Route path="/profile/:user" element={restrict(<Profile />)}/>
