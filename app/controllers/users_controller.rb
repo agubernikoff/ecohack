@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid,with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound,with: :render_not_found
-  before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
       users = User.all
@@ -37,8 +36,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(session[:user_id])
-    user.update!(user_update_params)
+    user = User.find(params[:id])
+    user.update!(user_params)
     render json: user
   end
     
