@@ -17,7 +17,7 @@ function Leaderboard({name, communityUsers}) {
     <h2 className="text-2xl mb-6">{name}</h2>
     {communityUsers ? communityUsers.map( user => (
         <div className="flex w-full my-3">
-            <div className="w-14 font-bold text-4xl flex items-center">
+            <div className="w-14 font-bold text-5xl flex items-center">
                 <span>{communityUsers.indexOf(user) + 1}</span>
             </div>
             <div className="flex flex-col w-full">
