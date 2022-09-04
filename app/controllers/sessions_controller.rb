@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     def create
         
-        @user = User.find_by(email_address: params[:email])
+        @user = User.find_by(email: params[:email])
         
         if @user && @user.authenticate(params[:password]) 
             session[:user_id] = @user.id
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session[:user_id] = nil
-        redirect_to root_path
+        render json: status: :destroy
     end
 
 
