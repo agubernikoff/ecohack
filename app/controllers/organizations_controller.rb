@@ -7,6 +7,11 @@ class OrganizationsController < ApplicationController
         render json: organization
     end
 
+    def show
+        organ = Organization.find(params[:id])
+        render json: organ
+    end
+
     def update
         organ = Organization.find(params[:id])
         organ.update!(organization_params)

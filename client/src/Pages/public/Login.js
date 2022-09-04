@@ -28,6 +28,7 @@ function login(e) {
       r.json().then((user) => {
       setUser(user)
       sessionStorage.setItem('Logged In?', true)
+      sessionStorage.setItem('Organization_ID', user.organization_id)
       navigate(`/${user.organization_id}`)
     })
     } else {
