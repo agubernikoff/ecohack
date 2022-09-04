@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get "/me", to: "users#show"
 
-  # get '/signup', to: 'users#new', as:'signup'
-  # post '/signup', to: 'users#create'
+  get '/scandit', to:"scanners#scandit"
+  post '/barcode', to:"scanners#barcode_lookup"
 
   resources :users
   resources :organizations

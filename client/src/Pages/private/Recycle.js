@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Scanner from "../../Scanner";
 
 function Donate() {
   return (
-    <div>Donate</div>
-  )
+    <div>
+      <Scanner />
+    </div>
+  );
 }
 
-export default Donate
+export default Donate;
