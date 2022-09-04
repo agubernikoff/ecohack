@@ -4,7 +4,7 @@ import ScanResultMessage from "../../ScanResultMessage";
 
 function Donate({ user }) {
   const [isScanning, setIsScanning] = useState(false);
-  const [result, setResult] = useState("success");
+  const [result, setResult] = useState("");
 
   function toggleIsScanning() {
     setIsScanning(true);
