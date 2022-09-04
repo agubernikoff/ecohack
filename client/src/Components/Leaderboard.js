@@ -21,9 +21,9 @@ function Leaderboard({name, communityUsers}) {
             </div>
             <div className="flex flex-col w-full">
                 <h3 className="font-bold capitalize mb-2">{user.first_name} {user.last_name}</h3>
-                <div className="h-14 border rounded-full relative overflow-hidden w-full">
+                <div className="h-8 border rounded-full relative overflow-hidden w-full">
                     <div style={{width: findPercentage(user.points)}} className="bg-gradient-to-r from-dark-green to-light-green h-full relative flex items-center">
-                        <span className="absolute top-0 bottom-0 right-5 m-auto text-white font-bold h-min text-md">{user.points}</span>
+                        <span className="absolute top-0 bottom-0 right-5 m-auto text-white font-bold h-min text-sm">{user.points}</span>
                     </div>
                 </div>
             </div>
