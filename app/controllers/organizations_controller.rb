@@ -14,7 +14,8 @@ class OrganizationsController < ApplicationController
     end
 
     def create
-        organization = Organization.create(organization_params)
+        organization = Organization.create!(organization_params)
+        render json: organization, status: :created
     end
 
 
