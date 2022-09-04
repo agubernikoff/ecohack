@@ -4,7 +4,7 @@ function Organization() {
 
 const itemsCollected = 546
 const communityGoal = 1000
-const communityGoalProogress = ((itemsCollected / communityGoal) * 100) + "%"
+const communityGoalProogress = Math.ceil((itemsCollected / communityGoal) * 100) + "%"
 
   return (
     <div className="m-16">
