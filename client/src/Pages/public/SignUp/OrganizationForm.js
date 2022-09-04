@@ -41,7 +41,7 @@ function OrganizationForm() {
             password: password,
             first_name: firstName,
             last_name: lastName,
-            score: 0,
+            points: 0,
             organization_id: orgID
         } })
       }).then((r) => {
