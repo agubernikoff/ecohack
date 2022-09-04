@@ -38,7 +38,7 @@ function App() {
   return (
     <BrowserRouter>
       <div
-        className={`App relative bg-gray h-full ${isLoggedIn ? "flex" : null}`}
+        className={`App relative bg-light-green/20 h-full ${isLoggedIn ? "flex" : null}`}
       >
         {header}
         <div

@@ -878,6 +878,18 @@ video {
   background-color: rgb(55 57 46 / 0.9);
 }
 
+.bg-light-green\/20 {
+  background-color: rgb(83 165 72 / 0.2);
+}
+
+.bg-light-green\/10 {
+  background-color: rgb(83 165 72 / 0.1);
+}
+
+.bg-light-green\/30 {
+  background-color: rgb(83 165 72 / 0.3);
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }

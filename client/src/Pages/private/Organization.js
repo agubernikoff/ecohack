@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Leaderboard from '../../Components/Leaderboard'
+import Loading from '../../Components/Loading'
 
 function Organization() {
 
@@ -21,9 +22,8 @@ const {company_name, points, users} = orgData || {}
 const communityGoal = 100
 const communityGoalProogress = points ? Math.ceil((points / communityGoal) * 100) + "%" : 0
 
-console.log(users)
-
   return (
+    orgData.length !== 0 ? (
     <div className="m-16">
       <h1 className="text-4xl mb-10">{company_name}</h1>
       <section className="px-14 py-7 bg-white shadow-lg rounded-3xl flex flex-col relative border">
@@ -37,6 +37,7 @@ console.log(users)
       </section>
       <Leaderboard name="Community Leaderboard" communityUsers={orgData.users}/>
     </div>
+    ) : <Loading />
   )
 }
 
