@@ -18,7 +18,7 @@ function SideBar() {
                     <button>Logout</button>
                 </li>
                 <li className="absolute bottom-10 right-0 left-0 m-auto w-min">
-                    <GreenButton to="/donate" text="Donate" />
+                    <GreenButton to="/recycle" text="Recycle" />
                 </li>
             </ul>
         </nav>
