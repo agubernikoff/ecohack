@@ -19,20 +19,9 @@ useEffect(() => {
 const {company_name, points, users} = orgData || {}
 
 const communityGoal = 100
-const communityGoalProogress = Math.ceil((points / communityGoal) * 100) + "%"
+const communityGoalProogress = points ? Math.ceil((points / communityGoal) * 100) + "%" : 0
 
-const communityUsers = [
-  {
-    first_name: "John",
-    last_name: "Doe",
-    points: 123
-  },
-  {
-    first_name: "Evan",
-    last_name: "chernicky",
-    points: 500
-  },
-]
+console.log(users)
 
   return (
     <div className="m-16">
