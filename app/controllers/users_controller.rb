@@ -37,7 +37,10 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update!(user_params)
+    user.update!(points:user.points+1)
+    org=Organization.find(user.organization_id)
+    points=org.calculate_total_points
+    org.update(points:points)
     render json: user
   end
     

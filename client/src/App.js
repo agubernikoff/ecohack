@@ -54,7 +54,10 @@ function App() {
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/:organization" element={restrict(<Organization />)} />
             <Route path="/profile/:user" element={restrict(<Profile />)} />
-            <Route path="/recycle" element={restrict(<Recycle />)} />
+            <Route
+              path="/recycle"
+              element={restrict(<Recycle user={user} />)}
+            />
           </Routes>
         </div>
       </div>

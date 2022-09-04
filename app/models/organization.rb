@@ -4,8 +4,6 @@ class Organization < ApplicationRecord
     validates :company_name, presence: true
     validates :points, presence: true
 
-    before_save :calculate_total_points
-
     def calculate_total_points
         if self.users.length>0
             self.users.map{|user| user.points}.sum

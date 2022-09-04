@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from "react";
 import * as ScanditSDK from "scandit-sdk";
 
-function Scanner() {
+function Scanner({ finishScanning, user }) {
   const [scanditKey, setScanditKey] = useState("");
+
+  function successfulScan() {
+    fetch(`/users/${user.id}`, { method: "PATCH" }).then((r) => {
+      if (r.ok) {
+        r.json().then((data) => {
+          finishScanning("success");
+          console.log(data); //update user & org points???
+        });
+      } else
+        r.json().then((data) => {
+          console.log(data);
+        });
+    });
+  }
 
   useEffect(() => {
     fetch("/scandit").then((r) => {
@@ -38,7 +52,12 @@ function Scanner() {
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ barcode: scanResult.barcodes[0].data }),
             }).then((r) => {
-              if (r.ok) r.json().then((data) => console.log(data));
+              if (r.ok)
+                r.json().then((data) => {
+                  if (data.products[0].category.includes("Beverage")) {
+                    successfulScan();
+                  } else finishScanning("failure");
+                });
             });
           });
         });
