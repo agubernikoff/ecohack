@@ -2,6 +2,8 @@ import React from 'react'
 
 function Leaderboard({name, communityUsers}) {
 
+    if (communityUsers) communityUsers.sort((a,b) => b.points - a.points)
+
     let largestNumber = communityUsers[0].points || 0
 
     function findPercentage(points) {
@@ -26,7 +28,7 @@ function Leaderboard({name, communityUsers}) {
                 </div>
             </div>
         </div>
-    )).sort((a,b) => b.points - a.points)
+    ))
      : null}
 </section>
   )
