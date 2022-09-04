@@ -15,7 +15,7 @@ function App() {
 
   //if there is user data, use sidebar, else use top header
   const isLoggedIn = !!sessionStorage.getItem("Logged In?");
-  const header = isLoggedIn ? <SideBar setUser={setUser} /> : <TopHeader />;
+  const header = user ? <SideBar setUser={setUser} /> : <TopHeader />;
 
   useEffect(() => {
     // auto-login
@@ -28,7 +28,7 @@ function App() {
 
   //Sends user to page if not logged in
   function restrict(component) {
-    if (isLoggedIn) {
+    if (user) {
       return component;
     } else {
       return <Login setUser={setUser} user={user} />;
@@ -37,14 +37,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div
-        className={`App relative bg-gray h-full ${isLoggedIn ? "flex" : null}`}
-      >
+      <div className={`App relative bg-gray h-full ${user ? "flex" : null}`}>
         {header}
-        <div
-          style={isLoggedIn ? { marginLeft: "200px" } : {}}
-          className="w-full"
-        >
+        <div style={user ? { marginLeft: "200px" } : {}} className="w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
