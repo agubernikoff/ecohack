@@ -11,7 +11,7 @@ import SideBar from "./Components/Header/SideBar";
 import Loading from "./Components/Loading";
 
 function App() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState("");
 
   //if there is user data, use sidebar, else use top header
   const isLoggedIn = !!sessionStorage.getItem("Logged In?");
@@ -25,6 +25,7 @@ function App() {
       }
     });
   }, []);
+  console.log(user);
 
   //Sends user to page if not logged in
   function restrict(component) {
