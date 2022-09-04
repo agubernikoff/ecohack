@@ -14,7 +14,7 @@ function UserForm() {
       password: password,
       first_name: firstName,
       last_name: lastName,
-      score: null,
+      score: 0,
       organization_id: organizationID
     } 
   }

@@ -4,6 +4,8 @@ import { useNavigate} from "react-router-dom"
 
 function Login({setUser, user}) {
 
+  console.log(user)
+
   let navigate = useNavigate()
 
   const [email, setEmail] = useState("")
@@ -23,8 +25,11 @@ function login(e) {
     })
   }).then((r) => {
     if (r.ok) {
-      r.json().then((user) => setUser(user))
+      r.json().then((user) => {
+      setUser(user)
+      sessionStorage.setItem('Logged In?', true)
       navigate(`/${user.organization_id}`)
+    })
     } else {
       r.json().then((errorData) => console.log(errorData.error))
     }

@@ -7,16 +7,6 @@ function OrganizationForm() {
   const [password, setPassword] = useState("")
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
-  const userData =  { 
-    user: {
-      email: email,
-      password: password,
-      first_name: firstName,
-      last_name: lastName,
-      score: null,
-      organization_id: null
-    } 
-  }
 
   function createUser(e) {
     e.preventDefault()
@@ -30,15 +20,40 @@ function OrganizationForm() {
         company_name: organization,
         points: 0
       })
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((org) =>  renderUser(org.id))
+      } else {
+        r.json().then((errorData) => console.log(errorData.error))
+      }
     })
+
+    function renderUser(orgID) {
+
+      fetch('http://localhost:4000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify( {
+          user: {
+            email: email,
+            password: password,
+            first_name: firstName,
+            last_name: lastName,
+            score: 0,
+            organization_id: orgID
+        } })
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then((user) =>  console.log(user))
+        } else {
+          r.json().then((errorData) => console.log(errorData.error))
+        }
+      })
   
-    fetch('http://localhost:4000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(userData)
-    })
+
+    }
   
     e.target.reset()
   

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './Pages/public/Home.js'
 import SignUp from './Pages/public/SignUp/SignUp.js'
@@ -15,18 +15,25 @@ function App() {
 
   const [user, setUser] = useState([])
 
-
-
   //if there is user data, use sidebar, else use top header
-  const isLoggedIn = user.length !== 0
-  const header = isLoggedIn ? <SideBar /> : <TopHeader />
+  const isLoggedIn = !!sessionStorage.getItem('Logged In?')
+  const header = isLoggedIn ? <SideBar setUser={setUser}/> : <TopHeader />
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me/").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user))
+      }
+    })
+  }, [])
 
   //Sends user to page if not logged in
   function restrict(component) {
     if (isLoggedIn) {
       return component
     } else {
-      return <Login />
+      return <Login setUser={setUser} user={user}/>
     }
   }
 
