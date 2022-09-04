@@ -13,7 +13,7 @@ import Loading from './Components/Loading'
 
 function App() {
 
-  const [user, setUser] = useState([{}])
+  const [user, setUser] = useState([])
 
   //if there is user data, use sidebar, else use top header
   const isLoggedIn = user.length !== 0
