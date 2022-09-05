@@ -19,9 +19,7 @@ function ScanResultMessage({ result, toggleIsScanning, user }) {
   return (
     <div className="text-3xl mb-10 font-bold">
       {message}
-      <button onClick={() => navigate(`/${user.organization_id}`)}>
-        Return to Homepage
-      </button>
+      <button onClick={() => navigate(`/leaders`)}>Return to Homepage</button>
       <button onClick={() => toggleIsScanning()}>
         {result === "success" ? "Scan Another" : "Try Again"}
       </button>

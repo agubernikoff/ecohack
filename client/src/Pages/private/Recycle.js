@@ -4,8 +4,8 @@ import ScanResultMessage from "../../ScanResultMessage";
 
 function Donate({ user }) {
   const [isScanning, setIsScanning] = useState(false);
-  const [result, setResult] = useState("");
-  const btnStyling = isScanning ? "bg-black" : "bg-light-green"
+  const [result, setResult] = useState("failure");
+  const btnStyling = isScanning ? "bg-black" : "bg-light-green";
 
   function toggleIsScanning() {
     setIsScanning(true);
@@ -27,9 +27,9 @@ function Donate({ user }) {
         {isScanning ? "Finish Scanning" : "Start Scanning"}
       </button>
       {isScanning ? (
-          <div className="max-w-lg mb-14">
+        <div className="max-w-lg mb-14">
           <Scanner finishScanning={finishScanning} user={user} />
-          </div>
+        </div>
       ) : null}
       {result ? (
         <ScanResultMessage
