@@ -9,6 +9,7 @@ import Recycle from "./Pages/private/Recycle.js";
 import TopHeader from "./Components/Header/TopHeader";
 import SideBar from "./Components/Header/SideBar";
 import Loading from "./Components/Loading";
+import Landing from "./Landing";
 
 function App() {
   const [user, setUser] = useState("");
@@ -54,6 +55,7 @@ function App() {
               path="/recycle"
               element={restrict(<Recycle user={user} />)}
             />
+            <Route path="/leaders" element={restrict(<Landing />)} />
           </Routes>
         </div>
       </div>
