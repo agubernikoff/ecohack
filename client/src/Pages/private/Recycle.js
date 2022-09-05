@@ -27,7 +27,7 @@ function Donate({ user }) {
           <Scanner finishScanning={finishScanning} user={user} />
           </div>
       ) : null}
-      {result ? <ScanResultMessage result={result} /> : null}
+      {!result ? <ScanResultMessage result={result} /> : null}
     </div>
   );
 }
