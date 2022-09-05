@@ -10,6 +10,7 @@ import TopHeader from "./Components/Header/TopHeader";
 import SideBar from "./Components/Header/SideBar";
 import Loading from "./Components/Loading";
 import Landing from "./Landing";
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState("");
@@ -39,7 +40,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`App relative bg-gray h-full ${user ? "flex" : null}`}>
+      <div className={`App relative h-full ${user ? "flex" : null}`}>
         {header}
         <div style={user ? { marginLeft: "200px" } : {}} className="w-full">
           <Routes>

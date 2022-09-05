@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
-    height: 100%;
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #deeddd;
 }
 
-
 input:focus {
-    outline: 1px solid theme('colors.light-green') !important;
+  outline: 1px solid theme("colors.light-green") !important;
 }

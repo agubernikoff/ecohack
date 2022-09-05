@@ -9,7 +9,7 @@ function Landing() {
     []
   );
   return (
-    <div>
+    <div className="m-16">
       {users[0] ? (
         <Leaderboard name="Sitewide Leaderboard" communityUsers={users} />
       ) : null}

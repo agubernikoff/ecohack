@@ -4,7 +4,7 @@ import ScanResultMessage from "../../ScanResultMessage";
 
 function Donate({ user }) {
   const [isScanning, setIsScanning] = useState(false);
-  const [result, setResult] = useState("failure");
+  const [result, setResult] = useState("");
   const btnStyling = isScanning ? "bg-black" : "bg-light-green";
 
   function toggleIsScanning() {
