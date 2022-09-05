@@ -52,21 +52,21 @@ function Scanner({ finishScanning, user }) {
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ barcode: scanResult.barcodes[0].data }),
             }).then((r) => {
-              if (r.ok)
+              if (r.ok) {
                 r.json().then((data) => {
-                  if (data.products[0].category.includes("Beverage")) {
+                  console.log(data);
+                  if (data.products[0].category.includes("Beverage"))
                     successfulScan();
-                  } else finishScanning("failure");
+                  else finishScanning("failure");
                 });
+              }
             });
           });
         });
       });
     }
   }, [scanditKey]);
-  return (
-      <div id="scandit-barcode-picker"></div>
-  )
+  return <div id="scandit-barcode-picker"></div>;
 }
 
 export default Scanner;
