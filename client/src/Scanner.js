@@ -64,7 +64,9 @@ function Scanner({ finishScanning, user }) {
       });
     }
   }, [scanditKey]);
-  return <div id="scandit-barcode-picker"></div>;
+  return (
+      <div id="scandit-barcode-picker"></div>
+  )
 }
 
 export default Scanner;

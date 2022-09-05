@@ -17,7 +17,7 @@ function ScanResultMessage({ result, toggleIsScanning, user }) {
     );
   console.log(user);
   return (
-    <div className="result">
+    <div className="text-3xl mb-10 font-bold">
       {message}
       <button onClick={() => navigate(`/${user.organization_id}`)}>
         Return to Homepage
